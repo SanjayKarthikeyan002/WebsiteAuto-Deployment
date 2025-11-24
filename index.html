@@ -1,10 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Website Auto Deployment</title>
+    <meta charset="UTF-8" />
+    <title>Website Auto Deployment – DevOps Project</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Welcome to My DevOps Auto Deployment Project!</h1>
-    <p>Harish punda</p>
+    <header>
+        <h1>
+            Website Auto Deployment
+            <span>// AWS S3 + GitHub Actions</span>
+        </h1>
+    </header>
+
+    <main>
+        <!-- Intro section -->
+        <section class="section-card">
+            <h2>Project Overview</h2>
+            <p>
+                This is a <span class="highlight">static website</span> that is
+                automatically deployed to <span class="highlight">Amazon S3</span>
+                using a <span class="highlight">CI/CD pipeline</span> built with
+                GitHub Actions.
+            </p>
+            <p>
+                Whenever I update this code and push changes to the
+                <span class="highlight">main</span> branch, GitHub Actions
+                automatically uploads the latest version of this site to my S3
+                bucket — no manual deployment needed.
+            </p>
+        </section>
+
+        <!-- How it works -->
+        <section class="section-card">
+            <h2>How the Deployment Works</h2>
+            <ul>
+                <li>Edit the website files in VS Code.</li>
+                <li>Commit and push the changes to GitHub.</li>
+                <li>
+                    GitHub Actions runs a workflow that:
+                    <ul>
+                        <li>Checks out the repository code.</li>
+                        <li>Uses IAM credentials (stored as GitHub Secrets) to log in to AWS.</li>
+                        <li>Runs <code>aws s3 sync</code> to upload files to the S3 bucket.</li>
+                    </ul>
+                </li>
+                <li>
+                    Amazon S3 is configured for
+                    <span class="highlight">static website hosting</span>, so the new
+                    version becomes live automatically.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Tech stack -->
+        <section class="section-card">
+            <h2>Tech Stack</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">AWS S3 (Static Website Hosting)</span>
+                <span class="tech-tag">GitHub</span>
+                <span class="tech-tag">GitHub Actions (CI/CD)</span>
+                <span class="tech-tag">IAM (Access Management)</span>
+                <span class="tech-tag">AWS CLI</span>
+                <span class="tech-tag">HTML / CSS</span>
+            </div>
+        </section>
+
+        <!-- Learning section -->
+        <section class="section-card">
+            <h2>What I Learned</h2>
+            <ul>
+                <li>How to host a static website on Amazon S3.</li>
+                <li>How to create an IAM user with least-privilege access.</li>
+                <li>How to store AWS keys securely as GitHub Secrets.</li>
+                <li>How to build a simple CI/CD pipeline using GitHub Actions.</li>
+                <li>How automatic deployments reduce manual work and errors.</li>
+            </ul>
+        </section>
+
+        <!-- Optional: Contact / About you -->
+        <section class="section-card">
+            <h2>About This Project</h2>
+            <p>
+                This project was created to practice
+                <span class="highlight">DevOps fundamentals</span> without heavy coding.
+                It focuses on automation, cloud deployment, and understanding how tools
+                like GitHub Actions and AWS S3 work together.
+            </p>
+            <p>
+                Future improvements could include adding a custom domain, HTTPS using
+                CloudFront, or deploying more complex front-end apps.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Auto-deployed via GitHub Actions → Amazon S3 · Static Website CI/CD Demo</p>
+    </footer>
 </body>
 </html>
